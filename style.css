@@ -32,6 +32,7 @@ body *{ font-family: "shantell"; box-sizing: border-box; }
 
 .link:hover {
     text-decoration: underline;
+    color: rgb(14, 159, 255);
 }
 
 .button{
@@ -63,6 +64,21 @@ body *{ font-family: "shantell"; box-sizing: border-box; }
     display: none;
 }
 
+#playagain{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#result-text{
+    text-align: center;
+    display: block;
+    font-size: 3vw;
+    margin: 0px;
+    color: rgb(126, 126, 126);
+}
+
 .result > .title{
     font-size: 8vw;
     text-align: center;
@@ -86,21 +102,45 @@ body *{ font-family: "shantell"; box-sizing: border-box; }
     }
 }
 
-.hand{
+.player{
     position: absolute;
-    top: 40%;
+    top: 50%;
+}
+
+.player .name{
+    font-size: 1.6vw;
+    display: block;
+}
+
+.hand{
+    display: block;
 }
 
 .hand > img {
     height: 12vw;
 }
 
-.hand.left{
+.player.left{
     left: 10%;
+}
+
+.player.left .hand{
     rotate: 90deg;
 }
-.hand.right{
+
+.player.left .name{
+    text-align: left;
+}
+
+.player.right{
     right: 10%;
+}
+
+.player.right .name{
+    text-align: right;
+}
+
+.player.right .hand{
     transform: scaleY(-100%) rotate(-90deg);
 }
 
@@ -138,4 +178,9 @@ body *{ font-family: "shantell"; box-sizing: border-box; }
     .buttons {flex-direction: column;}
     .buttons > button{margin-bottom: 1vw;height: 24vw;width: 60vw;font-size: 5vw;}
     .buttons > button img{height: 10vw;}
+    .player {scale: 2;}
+    .player.left {left: 15%}
+    .player.right {right: 15%;}
+    .player .name {font-size: 3vw;}
+    #result-text{font-size: 10vw;}
 }
